@@ -52,6 +52,7 @@ fi
 if test "$1" = "0" -o "$#" = "0"  -o "$2" = "0";then
 	sudo cp -rf ./etc/X11/xorg.conf.d/99-calibration.conf-35c  /usr/share/X11/xorg.conf.d/99-calibration.conf
         if test "$1" = "lite" -o "$2" = "lite" -o "$j" = "kali"; then
+	echo "lite"
 	sudo cp ./boot/config-35c.txt-lite /boot/config.txt
 	else
 	sudo cp ./boot/config-35c.txt /boot/config.txt
@@ -76,8 +77,10 @@ elif test "$1" = "90" -o "$2" = "90" ;then
 elif test "$1" = "180" -o "$2" = "180" ;then
 	if test "$1" = "lite" -o "$2" = "lite" -o "$j" = "kali"; then
 	sudo cp ./boot/config-35c.txt-180-lite /boot/config.txt
+	echo "180-lite"
 	else
 	sudo cp ./boot/config-35c.txt-180 /boot/config.txt
+	echo "180-2"
 	fi
 	echo "LCD configure 180"
         sudo cp -rf ./etc/X11/xorg.conf.d/99-calibration.conf-35c-180  /usr/share/X11/xorg.conf.d/99-calibration.conf
